@@ -24,6 +24,7 @@ var toastrConfigs = {
     timeOut: 5000,
 
 }
+
 Vue.use(CxltToastr, toastrConfigs)
 
 

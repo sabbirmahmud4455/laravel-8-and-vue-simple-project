@@ -8,7 +8,7 @@
             </div>
             <hr>
             <table class="table table-bordered table-inverse table-responsive">
-                <thead class="thead-inverse">
+                <thead class="thead-inverse" style="min-width:100%">
                     <tr>
                         <th>#</th>
                         <th>Name</th>
@@ -17,22 +17,26 @@
                         <th>action</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr v-for="category in CategoryData " ::key="category.id">
-                        <td scope="row">{{category.id}}</td>
-                        <td>{{category.name}}</td>
-                        <td>{{category.slug}}</td>
-                        <td>{{category.description}} </td>
-                        <td class='d-flex'>
-                            <router-link :to="{name:'categorys_edit', params:{id: category.id}}" class="btn btn-info">
-                                Edit</router-link>
-                            
-                            <a @click.prevent="categoryDestroy(category.id)" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-
-
-                </tbody>
+                
+               
+                    <tbody v-if="CategoryData.length">
+                        <tr v-for="(category, index) in CategoryData" :key="index">
+                            <td scope="row">{{index+1}}</td>
+                            <td>{{category.name}}</td>
+                            <td>{{category.slug}}</td>
+                            <td>{{category.description}} </td>
+                            <td class='d-flex'>
+                                <router-link :to="{name:'categorys_edit', params:{id: category.id}}" class="btn btn-info mx-1">
+                                    Edit</router-link>
+                                
+                                <a @click.prevent="categoryDestroy(category.id)" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                
+                <div v-else>
+                    <h4 class="text-center p-3">Data Not Found</h4>
+                </div>
             </table>
         </div>
     </div>

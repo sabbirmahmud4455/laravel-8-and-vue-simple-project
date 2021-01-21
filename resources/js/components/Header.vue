@@ -7,11 +7,14 @@
                     aria-expanded="false" aria-label="Toggle navigation"></button>
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
+                        <li class="nav-item " >
                             <router-link class="nav-link" :to="{name:'home'}" >Home</router-link>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item ">
                             <router-link class="nav-link" :to="{name:'categorys'}">Category</router-link>
+                        </li>
+                        <li class="nav-item ">
+                            <router-link class="nav-link" :to="{name:'product-index'}">Prducts</router-link>
                         </li>
 
                     </ul>

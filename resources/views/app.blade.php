@@ -13,7 +13,6 @@
         <app-header class="mb-4"></app-header>
         <router-view></router-view>
     </div>
-
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
